@@ -1,0 +1,44 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Форма для редактирования темы {% endblock %}
+
+        {% block formContent %}
+        <h2>Редактирование темы</h2>
+
+            {% if model.theme.author == sharedState.userId%}
+            <div class="mb-3">
+                <label for="title" class="form-label">Название темы</label>
+                <input type="text" class="form-control" id="title" name="title"
+                       value="{{ model.form.fields["title"] | first }}" required>
+            </div>
+                {% else %}
+            <div class="mb-3">
+                <input type="hidden" class="form-control" id="title" name="title"
+                       value="{{ model.form.fields["title"] | first }}" required>
+            </div>
+            {% endif %}
+
+            {% if permissions.canChangeStatus == true %}
+            <div class="mb-3">
+                <div class="form-check form-switch">
+                    {% if model.form.fields["addPossibility"] | first == "on" %}
+                        <input class="form-check-input" type="checkbox" role="switch" id="addPossibility" name="addPossibility" checked>
+                        {% else %}
+                        <input class="form-check-input" type="checkbox" role="switch" id="addPossibility" name="addPossibility">
+                    {% endif %}
+                    <label class="form-check-label" for="addPossibility">Возможность добавлять сообщения</label>
+                </div>
+            </div>
+            {% else %}
+            {% if model.form.fields["addPossibility"] | first == "on" %}
+            <div class="mb-3">
+                <input type="hidden" class="form-control" id="addPossibility" name="addPossibility"
+                       value="{{ model.form.fields["addPossibility"] | first }}">
+            </div>
+            {% endif %}
+            {% endif %}
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Изменить данные</button>
+        </div>
+        {% endblock %}

@@ -1,0 +1,101 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Редактирование прав {% endblock %}
+
+    {% block formContent %}
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canAddTheme"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canAddTheme" name="canAddTheme" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canAddTheme" name="canAddTheme">
+            {% endif %}
+            <label class="form-check-label" for="canAddTheme">Возможность добавлять темы</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canEditTheme"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canEditTheme" name="canEditTheme" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canEditTheme" name="canEditTheme">
+            {% endif %}
+            <label class="form-check-label" for="canEditTheme">Возможность редактировать темы</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canDeleteTheme"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canDeleteTheme" name="canDeleteTheme" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canDeleteTheme" name="canDeleteTheme">
+            {% endif %}
+            <label class="form-check-label" for="canDeleteTheme">Возможность удалять темы</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canAddMessage"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canAddMessage" name="canAddMessage" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canAddMessage" name="canAddMessage">
+            {% endif %}
+            <label class="form-check-label" for="canAddMessage">Возможность добавлять сообщения</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canEditMessage"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canEditMessage" name="canEditMessage" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canEditMessage" name="canEditMessage">
+            {% endif %}
+            <label class="form-check-label" for="canEditMessage">Возможность редактировать сообщения</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canDeleteMessage"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canDeleteMessage" name="canDeleteMessage" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canDeleteMessage" name="canDeleteMessage">
+            {% endif %}
+            <label class="form-check-label" for="canDeleteMessage">Возможность удалять сообщения</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canAddReaction"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canAddReaction" name="canAddReaction" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canAddReaction" name="canAddReaction">
+            {% endif %}
+            <label class="form-check-label" for="canAddReaction">Возможность добавлять реакции</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canDeleteReaction"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canDeleteReaction" name="canDeleteReaction" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canDeleteReaction" name="canDeleteReaction">
+            {% endif %}
+            <label class="form-check-label" for="canDeleteReaction">Возможность удалять реакции</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <div class="form-check form-switch">
+            {% if model.form.fields["canChangeStatus"] | first == "on" %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canChangeStatus" name="canChangeStatus" checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" role="switch" id="canChangeStatus" name="canChangeStatus">
+            {% endif %}
+            <label class="form-check-label" for="canChangeStatus">Возможность открывать/закрывать темы</label>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Изменить права</button>
+    </div>
+
+    {% endblock %}

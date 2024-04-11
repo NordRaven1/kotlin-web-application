@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.uniyar.handlers.MessageHandlersFunctionsTest" tests="28" skipped="0" failures="0" errors="0" timestamp="2023-12-13T19:41:22" hostname="LAPTOP-IP9JR0UG" time="0.596">
+  <properties/>
+  <testcase name="show new message form - Should return OK status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.283"/>
+  <testcase name="show new message form with invalid theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.005"/>
+  <testcase name="show new message form with null theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.006"/>
+  <testcase name="create new message - Should redirect to the /themes/theme/{themeId}/message/{mesId} route" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.013"/>
+  <testcase name="create new message with invalid theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="create new message with null theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.005"/>
+  <testcase name="create new message with invalid field - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.008"/>
+  <testcase name="show edit message form - Should return OK status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.008"/>
+  <testcase name="show edit message form with invalid theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show edit message form with null theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="show edit message form with invalid message id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.005"/>
+  <testcase name="show edit message form with null message id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="edit message - Should redirect to the /themes/theme/{themeId}/message/{mesId} route" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="edit message with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="edit message with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="edit message with invalid message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="edit message with null message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="edit message with invalid field - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="show delete message form - should return OK status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.006"/>
+  <testcase name="show delete message form with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show delete message form with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show delete message form with invalid message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="show delete message form with null message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="delete message - Should redirect to the /themes/theme/{themeId} route" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="delete message with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.005"/>
+  <testcase name="delete message with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.003"/>
+  <testcase name="delete message with invalid message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.004"/>
+  <testcase name="delete message without check field - should return BAD_REQUEST status" classname="ru.uniyar.handlers.MessageHandlersFunctionsTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.uniyar.handlers.ReactionHandlersFunctionsTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2023-12-13T19:41:22" hostname="LAPTOP-IP9JR0UG" time="0.225">
+  <properties/>
+  <testcase name="show new reaction form - Should return OK status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.008"/>
+  <testcase name="show new reaction form with invalid theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="show new reaction form with null theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="show new reaction form with invalid message id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.005"/>
+  <testcase name="show new reaction form with null message id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="create new reaction - Should redirect to the /themes/theme/{themeId}/message/{mesId} route" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.005"/>
+  <testcase name="create new reaction with invalid theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.005"/>
+  <testcase name="create new reaction with null theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.005"/>
+  <testcase name="create new reaction with invalid message id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.003"/>
+  <testcase name="create new reaction with null message id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="create new reaction with invalid field - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.007"/>
+  <testcase name="show delete reaction form - should return OK status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.006"/>
+  <testcase name="show delete reaction form with theme message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show delete reaction form with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.002"/>
+  <testcase name="show delete reaction form with invalid message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show delete reaction form with null message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show delete reaction form with invalid reaction number - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="delete reaction - Should redirect to the /themes/theme/{themeId}/message/{mesId} route" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="delete reaction with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.003"/>
+  <testcase name="delete reaction with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.003"/>
+  <testcase name="delete reaction with invalid message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="delete reaction with null message id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.005"/>
+  <testcase name="delete reaction with invalid reaction number - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <testcase name="delete reaction without check field - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ReactionHandlersFunctionsTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

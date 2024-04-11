@@ -1,0 +1,35 @@
+    {% extends "./layout.peb" %}
+
+        {% block title %} Форма для удаления реакции {% endblock %}
+
+    {% block content %}
+    <form method="POST">
+        <h2>Вы точно хотите удалить данную реакцию ?</h2>
+
+        <div class="mb-3">
+            <label class="form-label">Дата добавления: {{ model.reaction.forumObject.reactionDate }}</label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Реакция: &#{{ model.reaction.forumObject.reactionType }};</label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Автор: {{ model.reaction.author }}</label>
+        </div>
+
+        <div class="mb-3">
+            <input type="checkbox" id="agreement" name="agreement" />
+            <label for="agreement">Я подтверждаю, что хочу удалить данную реакцию</label>
+        </div>
+
+        {% if model.check == true %}
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <div>
+                    Если вы хотите удалить данную реакцию, вам необходимо поставить галочку выше
+                </div>
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Удалить реакцию</button>
+    </form>
+    {% endblock %}

@@ -1,0 +1,36 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Страница авторизации {% endblock %}
+
+    {% macro input(type, name, form) %}
+        <input type="{{ type }}" class="form-control" id="{{ name }}" name="{{ name }}"
+               value="{{ form.fields[name] | first }}" required>
+    {% endmacro %}
+
+    {% block formContent %}
+        <center>
+            <h2>Приветствуем на Форуме!</h2>
+        </center>
+            <center>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Ваше имя</label>
+                    <input type="text" class="form-control" id="userName" name="userName"
+                           value="{{ model.form.fields["userName"] | first }}" required autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                {{ input(name="password", type="password", form=model.form) }}
+                </div>
+            </center>
+            <center>
+                <button type="submit" class="btn btn-primary">Авторизоваться</button>
+            </center>
+            <div class="container text-end">
+                <div class="row">
+                    <div class="col">
+                        <p>Новенький? <a class="btn btn-success" href="/users/new">
+                            Зарегистрироваться</a></p>
+                    </div>
+                </div>
+            </div>
+    {% endblock %}

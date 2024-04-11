@@ -1,0 +1,77 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    }
+}
+
+plugins{
+    id("org.jlleitschuh.gradle.ktlint") version "11.6.0"
+    id "io.gitlab.arturbosch.detekt" version "1.23.1"
+}
+
+apply plugin: "application"
+
+mainClassName = "ru.uniyar.ForumApplicationKt"
+
+repositories {
+    mavenCentral()
+}
+
+run {
+    environment("web.port", 9000)
+    environment("auth.salt",
+            "0f4a899fbcd953c5a97bf89c1d31f8ea3df9befb08c91c8c3ed99c51d6001cdc5fdb020ae00340e357fd34ec96d2186b327a")
+    environment("jwt.secret",
+            "8b4c9cddbdcc0e96d7246f8c288d612d075719f615925192b53ba78d2907cc071d4256c934c4e038d56c184868ec8bc348e9")
+    standardInput = System.in
+}
+
+apply plugin: "kotlin"
+
+compileKotlin.kotlinOptions.jvmTarget = "17"
+compileTestKotlin.kotlinOptions.jvmTarget = "17"
+compileTestKotlin.kotlinOptions.freeCompilerArgs += "-Xjvm-default=all"
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation("org.http4k:http4k-client-okhttp:${http4kVersion}")
+    implementation("org.http4k:http4k-core:${http4kVersion}")
+    implementation("org.http4k:http4k-format-jackson:${http4kVersion}")
+    implementation("org.http4k:http4k-multipart:${http4kVersion}")
+    implementation("org.http4k:http4k-server-netty:${http4kVersion}")
+    implementation("org.http4k:http4k-template-pebble:${http4kVersion}")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    implementation("org.slf4j:slf4j-simple:1.7.30")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.7.1")
+    implementation group: "org.http4k", name: "http4k-cloudnative", version: http4kVersion
+    implementation group: 'com.auth0', name:'java-jwt', version: javaJwtVersion
+    testImplementation("org.http4k:http4k-testing-approval:${http4kVersion}")
+    testImplementation("org.http4k:http4k-testing-hamkrest:${http4kVersion}")
+    testImplementation("org.http4k:http4k-testing-kotest:${http4kVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testImplementation("io.kotest:kotest-runner-junit5:${kotestVersion}")
+    testImplementation("io.kotest:kotest-assertions-core:${kotestVersion}")
+    testImplementation(platform("org.http4k:http4k-bom:5.8.6.0"))
+}
+
+ktlint {
+    version = ktlintVersion
+}
+
+detekt {
+    allRules = true
+    buildUponDefaultConfig = true
+}
+

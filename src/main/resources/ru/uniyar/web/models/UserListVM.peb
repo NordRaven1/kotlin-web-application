@@ -1,0 +1,41 @@
+{% extends "./layout.peb" %}
+{% block title %} Список пользователей {% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Имя</th>
+        <th scope="col">Роль</th>
+        <th scope="col">Взаимодействие</th>
+    </tr>
+    </thead>
+    <tbody>
+            {% for user in model.users %}
+            <tr>
+                <td>{{user.userName}}</td>
+                <td>{{user.role.name}}</td>
+                {% if permissions.name == "ADMIN" %}
+                    <td><a class="btn btn-info" href="/users/{{ user.userId }}">
+                        Редактировать роль</a></td>
+                    {% elseif permissions.name == "MODERATOR" %}
+                    <td><a class="btn btn-danger" href="/users/{{ user.userId }}/ban">
+                        Забанить</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+    </tbody>
+</table>
+
+{% if permissions.name == "ADMIN" %}
+<div class="container text-end">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-success" href="/users/new">
+                Добавить пользователя</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

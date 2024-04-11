@@ -1,0 +1,43 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Страница регистрации {% endblock %}
+
+    {% macro input(type, name, form) %}
+            <input type="{{ type }}" class="form-control" id="{{ name }}" name="{{ name }}"
+                   value="{{ form.fields[name] | first }}" required>
+    {% endmacro %}
+
+    {% block formContent %}
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Ваше имя</label>
+                    <input type="text" class="form-control" id="userName" name="userName"
+                           value="{{ model.form.fields["userName"] | first }}" required autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Пароль</label>
+                    {{ input(name="password", type="password", form=model.form) }}
+                </div>
+            <div class="mb-3">
+                <label for="repeatPassword" class="form-label">Повторите пароль</label>
+                {{ input(name="repeatPassword", type="password", form=model.form) }}
+            </div>
+        {% if permissions.name == "ADMIN" %}
+        <div class="mb-3">
+            <label>
+                Роль
+            </label>
+            <select class="form-select" aria-label="Default select example" name="role">
+                    {% for role in model.roles %}
+                    {% if role.name == model.form.fields["role"] | first %}
+                        <option selected value="{{ role.name }}">{{ role.name }}</option>
+                        {% else %}
+                        <option value="{{ role.name  }}">{{ role.name  }}</option>
+                    {% endif %}
+                    {% endfor %}
+            </select>
+        </div>
+        {% endif %}
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </div>
+    {% endblock %}

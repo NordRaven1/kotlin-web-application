@@ -1,0 +1,19 @@
+{% extends "./layout.peb" %}
+
+{% block content %}
+<form method="POST">
+
+    {% block formContent %} {% endblock %}
+
+
+    {% if model.failures is not empty %}
+        {% for failure in model.failures %}
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <div>
+                        {{ failure }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</form>
+{% endblock %}

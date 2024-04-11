@@ -1,0 +1,36 @@
+{% extends "./formLayout.peb" %}
+
+{% block title %} Редактирование пользователя {% endblock %}
+
+{% block formContent %}
+<div class="mb-3">
+    <label>
+        Роль
+    </label>
+    <select class="form-select" aria-label="Default select example" name="role">
+            {% for role in model.roles %}
+            {% if role.name == model.form.fields["role"] | first %}
+                <option selected value="{{ role.name }}">{{ role.name }}</option>
+                {% else %}
+                <option value="{{ role.name  }}">{{ role.name  }}</option>
+            {% endif %}
+            {% endfor %}
+    </select>
+</div>
+
+<div class="mb-3">
+    <button type="submit" class="btn btn-primary">Изменить роль</button>
+</div>
+
+<div class="mb-3">
+    <a class="btn btn-info" href="/users/{{ model.user.userId }}/permissions">
+        Редактировать права</a>
+</div>
+
+<div class="mb-3">
+    <a class="btn btn-info" href="/users/{{ model.user.userId }}/password">
+        Редактировать пароль</a>
+</div>
+
+{% endblock %}
+    

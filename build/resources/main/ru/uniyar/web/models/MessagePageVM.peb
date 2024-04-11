@@ -1,0 +1,99 @@
+    {% extends "./layout.peb" %}
+
+        {% block title %} Сообщение {{ model.message.author }} {% endblock %}
+
+    {% block content %}
+    <h1>Подробная информация о сообщении</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th scope="row">Тема</th>
+            <td> {{ model.message.forumObject.theme.title }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Автор</th>
+            <td> {{ model.message.author }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Дата добавления</th>
+            <td> {{ model.message.forumObject.addDate }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Дата последнего обновления</th>
+            <td> {{ model.message.forumObject.updateDate }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Текст</th>
+            <td> {{ model.message.forumObject.text }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Реакции</th>
+            <td>
+        {% for reaction in model.reactions %}
+                    <p>&#{{ reaction.forumObject.reactionType }};  {{ reaction.author }}  {{ reaction.forumObject.reactionDate }}
+        {% if permissions.canDeleteReaction == true and reaction.author == sharedState.username %}
+            <a class="btn btn-danger"
+               href="/themes/theme/{{model.message.forumObject.theme.id}}/message/{{ model.message.forumObject.id }}/deleteReaction/{{ loop.index }}">
+                Удалить реакцию</a></p>
+        {% endif %}
+
+        {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Счётчик версий текста</th>
+            <td> {{ model.message.forumObject.revisions }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="container text-start">
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary"
+                   href="/themes/theme/{{model.message.forumObject.theme.id}}">
+                    Вернуться к сообщениям</a>
+            </div>
+        </div>
+    </div>
+
+    {% if permissions.canAddReaction == true %}
+    <div class="container text-end">
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-success"
+                   href="/themes/theme/{{model.message.forumObject.theme.id}}/message/{{ model.message.forumObject.id }}/newReaction">
+                    Добавить реакцию</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% if permissions.canEditMessage == true and model.message.author == sharedState.username  %}
+    <div class="container text-end">
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-warning"
+                   href="/themes/theme/{{model.message.forumObject.theme.id}}/message/{{ model.message.forumObject.id }}/edit">
+                    Редактировать сообщение</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% if permissions.canDeleteMessage == true and
+    (model.message.author == sharedState.username or permissions.name == "ADMIN" or permissions.name == "MODERATOR") %}
+    <div class="container text-end">
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-danger"
+                   href="/themes/theme/{{model.message.forumObject.theme.id}}/message/{{ model.message.forumObject.id }}/delete">
+                    Удалить сообщение</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% endblock %}

@@ -1,0 +1,25 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Форма для создания реакции {% endblock %}
+
+        {% block formContent %}
+
+        <div class="mb-3">
+            <label>
+                Реакция
+            </label>
+            <select class="form-select" aria-label="Default select example" name="reaction">
+                    {% for reaction in model.reactions %}
+                    {% if reaction == model.form.fields["reaction"] | first %}
+                        <option selected value="{{ reaction }}">&#{{ reaction }};</option>
+                        {% else %}
+                        <option value="{{ reaction }}">&#{{ reaction }};</option>
+                    {% endif %}
+                    {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Отправить данные</button>
+        </div>
+        {% endblock %}

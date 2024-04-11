@@ -1,0 +1,177 @@
+[ {
+  "userName" : "admin",
+  "password" : "55105e2052f74345ce682467d1a86eb2436ef3bdc154ce25eb9f363ebde904b3",
+  "role" : {
+    "name" : "ADMIN",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : true
+  },
+  "userId" : "26144c01-cd0f-4024-8548-e914351ee439"
+}, {
+  "userName" : "NordRaven",
+  "password" : "7b33d92b0d98f99680dfc96c6bbe865a1b5af7775ce7bc80a4fdbb3a8873122d",
+  "role" : {
+    "name" : "MODERATOR",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : true
+  },
+  "userId" : "38ea4c18-c4be-49ca-bd4a-cd49fcbd6dce"
+}, {
+  "userName" : "KirillH",
+  "password" : "094d943bce680fdc78f71df285da06060dbd3e5d8fb79aad1f0c1bab93a7d4f4",
+  "role" : {
+    "name" : "MODERATOR",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : true
+  },
+  "userId" : "f509198b-1267-4c95-b647-fd88ea136111"
+}, {
+  "userName" : "ElizabethPow",
+  "password" : "225c4e4cf732adc0331e3799355fba6ae8278f8ff57784ecc656bfd13ac65821",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "6b8d28ab-2ca9-4092-a3af-8e34bfed1190"
+}, {
+  "userName" : "AndrewPony",
+  "password" : "cc964081e4381fd605b4febdda0e094ee42cb21ca1c419c21b8dcd787cde1df0",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : false,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "60e5553f-16f4-4717-881a-3ac332e2f8a1"
+}, {
+  "userName" : "SasaMorozov",
+  "password" : "934978747b18e714ead69900a967f1ff1788f1c6f9d4a72b9ec01c7289381d1f",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "436577b7-f8f1-4154-b174-22312ef55e9c"
+}, {
+  "userName" : "TonnaK",
+  "password" : "e0a36b1794956b0dac750ee01fb91c16a450dcefeec681475eaf83e06ab80e51",
+  "role" : {
+    "name" : "BANNED",
+    "canAddTheme" : false,
+    "canEditTheme" : false,
+    "canDeleteTheme" : false,
+    "canAddMessage" : false,
+    "canEditMessage" : false,
+    "canDeleteMessage" : false,
+    "canAddReaction" : false,
+    "canDeleteReaction" : false,
+    "canChangeStatus" : false
+  },
+  "userId" : "7b962fc6-4b52-42f3-b098-50947f7177ab"
+}, {
+  "userName" : "KateKruk",
+  "password" : "42bd3e95d47771067eb7230ecb55c8cdc87596335f82c5164e7101ba7de9fbfa",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "5488b9da-03f2-418c-87fb-b0236529f22e"
+}, {
+  "userName" : "FedotavD",
+  "password" : "ec52b3e428b1420f51a219fea2afa6a3736703c524b60ad11f4f2aef4a03f792",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "c75ff2cf-030e-4e28-9d6e-a5a052a53f99"
+}, {
+  "userName" : "Akson106",
+  "password" : "ee567662093ab91ac4ed7349e0a608cadaa37ef509b552fafb30ffded22ef88d",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "aae4a95a-a6d2-47a0-890e-36cb9d0651e8"
+}, {
+  "userName" : "MaksFierce",
+  "password" : "e14045606cb2f743d1db9b2f208be329a189135bca0e713f80bd957e2cf5221c",
+  "role" : {
+    "name" : "AUTH_USER",
+    "canAddTheme" : true,
+    "canEditTheme" : true,
+    "canDeleteTheme" : true,
+    "canAddMessage" : true,
+    "canEditMessage" : true,
+    "canDeleteMessage" : true,
+    "canAddReaction" : true,
+    "canDeleteReaction" : true,
+    "canChangeStatus" : false
+  },
+  "userId" : "f7d7ba11-d5e9-4239-bbda-6d57ee1e153d"
+} ]

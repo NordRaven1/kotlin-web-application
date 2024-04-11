@@ -1,0 +1,7 @@
+# ForumApplication
+
+## Package
+```
+./gradlew distZip
+```
+

@@ -1,0 +1,107 @@
+{% extends "./layout.peb" %}
+{% block title %} Темы обсуждений {% endblock %}
+
+{% block content %}
+<h1>Список тем</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Тема</th>
+        <th scope="col">Автор</th>
+        <th scope="col">Время добавления</th>
+        <th scope="col">Возможность добавлять сообщения</th>
+        {% if permissions.canEditTheme == true %}
+            <th scope="col">Редактирование</th>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+        {% if model.paginator.elementList is not empty %}
+            {% for conversation in model.paginator.elementList %}
+            <tr>
+                <td class="table-info"><a href="/themes/theme/{{ conversation.forumObject.theme.id }}">{{ conversation.forumObject.theme.title }}</a></td>
+                <td>{{conversation.author}}</td>
+                <td>{{conversation.forumObject.theme.addDate}}</td>
+                {% if conversation.forumObject.theme.addPossibility == true %}
+                    <td>Можно</td>
+                    {% else %}
+                    <td>Нельзя</td>
+                {% endif %}
+            {% if permissions.canEditTheme == true %}
+                {% if conversation.author == sharedState.username or permissions.name == "ADMIN" or
+                permissions.name == "MODERATOR" %}
+                <td><a class="btn btn-warning" href="/themes/theme/{{conversation.forumObject.theme.id}}/edit">
+                    Редактировать тему</a></td>
+                {% endif %}
+            {% endif %}
+            </tr>
+            {% endfor %}
+            {% else %}
+        <tr>
+            <td>
+                <strong>Список пуст. Если вы фильтровали его, попробуйте изменить свой запрос</strong>
+            </td>
+        </tr>
+        {% endif %}
+
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="{{model.paginator.firstPageUri}}">Начальная</a>
+        </li>
+        <li class="page-item {{ model.paginator.previousPage }}">
+            <a class="page-link" href="{{model.paginator.previousPageUri}}">Предыдущая</a>
+        </li>
+        <li class="page-item"><a class="page-link">{{ model.paginator.targetPage }}</a></li>
+        <li class="page-item {{ model.paginator.nextPage }}">
+            <a class="page-link" href="{{model.paginator.nextPageUri}}">Следующая</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="{{model.paginator.lastPageUri}}">Последняя</a>
+        </li>
+    </ul>
+</nav>
+
+<form>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="medium-6 cell">
+                <label>Минимальная дата добавления темы
+                    <input type="datetime-local" name="mindate" value="{{ model.mindate }}">
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Максимальная дата добавления темы
+                    <input type="datetime-local" name="maxdate" value="{{ model.maxdate }}">
+                </label>
+            </div>
+            <div class="medium-6 cell">
+                <label>Фильтрация по теме
+                    <input type="text" name="theme" value="{{ model.themeSearch }}">
+                </label>
+            </div>
+            <div class="button">
+                <button type="submit">Отправить данные</button>
+            </div>
+            <div>
+                <input type="hidden" name="page" value="{{ model.paginator.targetPage }}">
+            </div>
+        </div>
+    </div>
+</form>
+
+{% if permissions.canAddTheme== true %}
+<div class="container text-end">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-success" href="/themes/new">
+                Добавить тему</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

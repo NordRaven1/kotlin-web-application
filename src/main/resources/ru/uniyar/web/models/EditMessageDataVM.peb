@@ -1,0 +1,17 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Форма для редактирования сообщения {% endblock %}
+
+        {% block formContent %}
+        <h2>Редактирование сообщения</h2>
+
+        <div class="mb-3">
+            <label for="text" class="form-label">Текст сообщения</label>
+            <input type="text" class="form-control" id="text" name="text"
+                   value="{{ model.form.fields["text"] | first }}" required>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Изменить данные</button>
+        </div>
+        {% endblock %}

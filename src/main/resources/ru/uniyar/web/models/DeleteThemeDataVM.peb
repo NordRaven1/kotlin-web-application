@@ -1,0 +1,35 @@
+    {% extends "./layout.peb" %}
+
+        {% block title %} Форма для удаления темы {% endblock %}
+
+    {% block content %}
+    <form method="POST">
+        <h2>Вы точно хотите удалить тему {{ model.themeAndMessages.forumObject.theme.title }} ?</h2>
+
+        <div class="mb-3">
+            <label class="form-label">Дата добавления: {{ model.themeAndMessages.forumObject.theme.addDate }}</label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Автор: {{ model.themeAndMessages.author }}</label>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Количество сообщений: {{ model.themeAndMessages.forumObject.messages.listOfMessage.size }}</label>
+        </div>
+
+        <div class="mb-3">
+            <input type="checkbox" id="agreement" name="agreement" />
+            <label for="agreement">Я подтверждаю, что хочу удалить тему {{ model.themeAndMessages.forumObject.theme.title }}</label>
+        </div>
+
+        {% if model.check == true %}
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <div>
+                    Если вы хотите удалить данную тему, вам необходимо поставить галочку выше
+                </div>
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Удалить тему</button>
+    </form>
+    {% endblock %}

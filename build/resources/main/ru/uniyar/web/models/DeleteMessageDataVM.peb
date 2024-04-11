@@ -1,0 +1,42 @@
+    {% extends "./layout.peb" %}
+
+        {% block title %} Форма для удаления сообщения {% endblock %}
+
+    {% block content %}
+    <form method="POST">
+        <h2>Вы точно хотите удалить данное сообщение ?</h2>
+        <div class="mb-3">
+            <label class="form-label">Дата добавления: {{ model.message.forumObject.addDate }}</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Тема: {{ model.message.forumObject.theme.title }}</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Автор: {{ model.message.author }}</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Текст: {{ model.message.forumObject.text }}</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Реакции: {% for reaction in model.reactions %}
+                <p>&#{{ reaction.forumObject.reactionType }};  {{ reaction.author }}  {{ reaction.forumObject.reactionDate }}</p>
+            {% endfor %}
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Счётчик версий текста: {{ model.message.forumObject.revisions }}</label>
+        </div>
+        <div class="mb-3">
+            <input type="checkbox" id="agreement" name="agreement" />
+            <label for="agreement">Я подтверждаю, что хочу удалить данное сообщение</label>
+        </div>
+        {% if model.check == true %}
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <div>
+                    Если вы хотите удалить данное сообщение, вам необходимо поставить галочку выше
+                </div>
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-primary">Удалить сообщение</button>
+    </form>
+    {% endblock %}

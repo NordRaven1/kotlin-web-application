@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.uniyar.handlers.ThemeHandlersFunctionsTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2023-12-13T19:41:22" hostname="LAPTOP-IP9JR0UG" time="0.155">
+  <properties/>
+  <testcase name="show new theme form - Should return OK status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.006"/>
+  <testcase name="create new theme - Should redirect to the /themes route" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.002"/>
+  <testcase name="create new theme with invalid field - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.005"/>
+  <testcase name="create new theme with repeated theme - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.005"/>
+  <testcase name="show edit theme form - Should return OK status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.008"/>
+  <testcase name="show edit theme form with invalid theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show edit theme form with null theme id - Should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.004"/>
+  <testcase name="edit theme - Should redirect to the /themes/theme/{themeId} route" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.003"/>
+  <testcase name="edit theme with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.003"/>
+  <testcase name="edit theme with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.004"/>
+  <testcase name="edit theme with repeated theme - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.005"/>
+  <testcase name="edit theme with invalid field - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.006"/>
+  <testcase name="show delete theme form - should return OK status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.007"/>
+  <testcase name="show delete theme form with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.003"/>
+  <testcase name="show delete theme form with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.002"/>
+  <testcase name="delete theme - Should redirect to the /themes route" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.003"/>
+  <testcase name="delete theme with invalid theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.003"/>
+  <testcase name="delete theme with null theme id - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.002"/>
+  <testcase name="delete theme without check field - should return BAD_REQUEST status" classname="ru.uniyar.handlers.ThemeHandlersFunctionsTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.uniyar.handlers.ShowAppInfoHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-13T19:41:22" hostname="LAPTOP-IP9JR0UG" time="0.005">
+  <properties/>
+  <testcase name="Should return OK status" classname="ru.uniyar.handlers.ShowAppInfoHandlerTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

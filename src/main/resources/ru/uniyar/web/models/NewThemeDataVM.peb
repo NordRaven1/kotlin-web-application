@@ -1,0 +1,16 @@
+    {% extends "./formLayout.peb" %}
+
+        {% block title %} Форма для создания темы {% endblock %}
+
+        {% block formContent %}
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Название темы</label>
+            <input type="text" class="form-control" id="title" name="title"
+                   value="{{ model.form.fields["title"] | first }}" required>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Создать тему</button>
+        </div>
+        {% endblock %}
